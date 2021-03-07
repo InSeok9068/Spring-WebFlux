@@ -1,3 +1,5 @@
+webclient.h2-console-port: 8081
+
 spring:
   profiles:
     active: default
