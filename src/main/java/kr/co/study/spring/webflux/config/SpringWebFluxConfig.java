@@ -8,9 +8,7 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
-import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import reactor.core.publisher.Mono;
 
 @Configuration
 @EnableWebFlux
@@ -22,11 +20,8 @@ public class SpringWebFluxConfig implements WebFluxConfigurer {
     @Bean
     RouterFunction<ServerResponse> routerFunction() {
         return RouterFunctions.route().
-                GET("", this::handlerFunction)
+                GET("", request -> userHandlerAdapter.selectUserList())
                 .build();
     }
 
-    private Mono<ServerResponse> handlerFunction(ServerRequest request) {
-        return ServerResponse.ok().body(userHandlerAdapter.selectUserList(), Object.class);
-    }
 }

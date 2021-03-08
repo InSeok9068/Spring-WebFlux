@@ -2,9 +2,8 @@ package kr.co.study.spring.webflux.biz;
 
 import org.springframework.r2dbc.core.DatabaseClient;
 import org.springframework.stereotype.Repository;
-import reactor.core.publisher.Flux;
-
-import java.util.Map;
+import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Mono;
 
 @Repository
 public class UserHandlerAdapter {
@@ -15,7 +14,7 @@ public class UserHandlerAdapter {
         this.databaseClient = databaseClient;
     }
 
-    public Flux<Map<String, Object>> selectUserList() {
-        return databaseClient.sql("SELECT * FROM USERS").fetch().all();
+    public Mono<ServerResponse> selectUserList() {
+        return ServerResponse.ok().body(databaseClient.sql("SELECT * FROM USERS").fetch().all().collectList(),Object.class);
     }
 }
