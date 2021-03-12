@@ -1,4 +1,7 @@
-webclient.h2-console-port: 8081
+app-config:
+  web-flux:
+    h2-console-port: 8081
+    log-enabled: true
 
 spring:
   profiles:

@@ -12,10 +12,11 @@ import java.sql.SQLException;
 
 @Slf4j
 @Configuration
-public class H2ServerConfig {
+public class
+H2ServerConfig {
     private Server webServer;
 
-    @Value("${webclient.h2-console-port}")
+    @Value("${app-config.web-flux.h2-console-port}")
     Integer h2ConsolePort;
 
     // ApplicationContext : Bean 생성, Dependency Injection, ResourceLoader, ApplicationEventPublisher등 역할
