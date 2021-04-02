@@ -9,3 +9,10 @@ spring:
   devtools:
     livereload:
       enabled: true
+
+logging:
+  level:
+# info가 Default
+    root: info
+# category 별로 로깅 레벨 다르게 설정하고 싶으면
+    test : debug
