@@ -1,1 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<included scan="true" scanPeriod="2">
+
+    <logger name="kr.co.study.spring.webflux" level="INFO"/>
+
+    <include resource="logback/anync-appender-console.xml" />
+
+    <root level="INFO">
+        <appender-ref ref="ASYNC_CONSOLE" />
+    </root>
+
+</included>

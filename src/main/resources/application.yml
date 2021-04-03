@@ -11,8 +11,8 @@ spring:
       enabled: true
 
 logging:
-  level:
+  config: classpath:logback-spring.xml
 # info가 Default
-    root: info
+#    root: info
 # category 별로 로깅 레벨 다르게 설정하고 싶으면
-    test : debug
+#    test : debug

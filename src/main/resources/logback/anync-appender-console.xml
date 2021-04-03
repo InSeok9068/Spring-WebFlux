@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included scan="true" scanPeriod="2">
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>${LOG_CHARSET}</charset>
+        </encoder>
+    </appender>
+
+    <appender name="ASYNC_CONSOLE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="CONSOLE" />
+        <neverBlock>true</neverBlock>
+    </appender>
+
+</included>

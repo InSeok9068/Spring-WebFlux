@@ -15,16 +15,16 @@
     <!-- 프로젝트의 logback 정책 설정 -->
     <include resource="logback/defaults.xml" />
 
-    <springProperty name="prod">
+    <springProfile name="prod">
         <include resource="logback/logback-prod.xml" />
-    </springProperty>
+    </springProfile>
 
-    <springProperty name="qa">
+    <springProfile name="qa">
         <include resource="logback/logback-qa.xml" />
-    </springProperty>
+    </springProfile>
 
-    <springProperty name="dev">
+    <springProfile name="dev">
         <include resource="logback/logback-dev.xml" />
-    </springProperty>
+    </springProfile>
 
 </configuration>

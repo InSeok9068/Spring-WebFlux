@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<include scan="true" scanPeriod="2">
+<included scan="true" scanPeriod="2">
 
     <property name="LOG_FILE"               value="WebFlux" />
 
@@ -10,4 +9,4 @@
 
     <property name="LOG_CHARSET"            value="UTF-8" />
 
-</include>
+</included>
