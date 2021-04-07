@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.HandlerFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
+import reactor.core.publisher.SignalType;
 
 import java.util.logging.Level;
 
@@ -19,6 +20,6 @@ public class UserHandlerAdapter {
             Mono.just(request)
                     .log("Request", Level.INFO,true)
                     .flatMap(req -> userDao.selectUserList())
-                    .log("Response", Level.INFO,true)
+                    .log("Response", Level.INFO,true, SignalType.ON_NEXT)
                     .flatMap(users -> ServerResponse.ok().bodyValue(users));
 }
